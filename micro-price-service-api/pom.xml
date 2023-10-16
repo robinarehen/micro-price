@@ -3,49 +3,41 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<parent>
 		<groupId>com.rah.testjava</groupId>
 		<artifactId>micro-price</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-
 	<artifactId>micro-price-service-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
 	<description>Demo project for Spring Boot</description>
-
 	<properties>
 		<java.version>11</java.version>
 		<basePackage>com.rah.testjava.microprice.service</basePackage>
 	</properties>
-
-	<build>
-	    <plugins>
-	        <plugin>
-	            <groupId>org.openapitools</groupId>
-	            <artifactId>openapi-generator-maven-plugin</artifactId>
-	            <version>6.2.1</version>
-	            <executions>
-	                <execution>
-	                    <id>generate-sources</id>
-	                    <phase>generate-sources</phase>
-	                    <goals>
-	                        <goal>generate</goal>
-	                    </goals>
+	<!--<build>
+		<plugins>
+			<plugin>
+				<groupId>org.openapitools</groupId>
+				<artifactId>openapi-generator-maven-plugin</artifactId>
+				<version>6.2.1</version>
+				<executions>
+					<execution>
+						<id>generate-sources</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
 						<configuration>
 							<inputSpec>${project.basedir}/src/main/resources/swagger/swagger-v2.yaml</inputSpec>
-							<!-- Si se quiere generar el código en la carpeta raiz src/main/java -->
-							<!-- <output>${project.build.sourceDirectory}</output> -->
+							<output>${project.build.sourceDirectory}</output>
 							<generatorName>spring</generatorName>
 							<library>spring-boot</library>
 							<modelPackage>${basePackage}.model</modelPackage>
 							<apiPackage>${basePackage}.api</apiPackage>
 							<supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
-							<!-- https://github.com/OpenAPITools/openapi-generator/blob/master/docs/generators/spring.md -->
 							<configOptions>
-								<!-- Es el complemento si se quiere generar el código en la carpeta raiz src/main/java -->
-								<!-- <sourceFolder>/</sourceFolder> -->
+								<sourceFolder>/</sourceFolder>
 								<reactive>false</reactive>
 								<interfaceOnly>true</interfaceOnly>
 								<skipDefaultInterface>true</skipDefaultInterface>
@@ -56,9 +48,9 @@
 								</additionalModelTypeAnnotations>
 							</configOptions>
 						</configuration>
-	                </execution>
-	            </executions>
-	        </plugin>
-	    </plugins>
-	</build>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>-->
 </project>

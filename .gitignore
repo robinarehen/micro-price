@@ -27,3 +27,5 @@ build/
 !**/src/test/**/build/
 
 .vscode/
+
+micro-price-service-api/src/main/java/.openapi-generator/
