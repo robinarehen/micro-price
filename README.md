@@ -21,6 +21,8 @@ User:   sa
 ## Ejemplo
 ![imagen](documentacion/db-h2.png)
 
+La data de la base de datos se carga al correr el proyecto mediante el archivo [data](micro-price-service-rest/src/main/resources/data.sql).
+
 # Deuda Técnica
 
 1. Se pasa la hora mediante un parametro, para que en el caso que no se envie una hora se tome la hora del sistema, esto queda sujeto a valoración.
