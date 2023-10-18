@@ -18,6 +18,6 @@ En el módulo [service-rest](micro-price-service-rest/) se cuenta con toda la l�
 
 3. Pendiente de manejo de `logs`, mensajes de errores personalizados.
 
-4. Se puede ver la forma de hacer una refactorización a los test unitarios.
+4. Se puede ver la forma de hacer una refactorización a los test unitarios, agregando más validaciones `asserts` y nuevos casos posibles.
 
 
