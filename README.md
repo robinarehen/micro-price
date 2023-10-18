@@ -12,10 +12,12 @@ En el módulo [service-rest](micro-price-service-rest/) se cuenta con toda la l�
 
 # Deuda Técnica
 
-1.      Se pasa la hora mediante un parametro, para que en el caso que no se envie una hora se tome la hora del sistema, esto queda sujeto a valoración.
+1. Se pasa la hora mediante un parametro, para que en el caso que no se envie una hora se tome la hora del sistema, esto queda sujeto a valoración.
 
-2.      Si el formato de la hora enviada no es correcto se toma la hora del sistema, donde se esperan los formatos `HH:mm` o `HH:mm:ss`, se debe confirmar si esta bien o se debe retornar un error.
+2. Si el formato de la hora enviada no es correcto se toma la hora del sistema, donde se esperan los formatos `HH:mm` o `HH:mm:ss`, se debe confirmar si esta bien o se debe retornar un error.
 
-3.      Pendiente de manejo de `logs`, mensajes de error personalizados.
+3. Pendiente de manejo de `logs`, mensajes de errores personalizados.
+
+4. Se puede ver la forma de hacer una refactorización a los test unitarios.
 
 
