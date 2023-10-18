@@ -1,7 +1,9 @@
 package com.rah.testjava.microprice.rest.controller;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +23,8 @@ public class PriceController implements PriceApi {
 
 	@Override
 	public ResponseEntity<Price> getPrice(LocalDate date, Integer productId, Integer brandId, String time) {
-		return ResponseEntity.ok(this.priceService.getPrice(date, productId, brandId, time));
+		Optional<Price> serviceResponse = this.priceService.getPrice(date, productId, brandId, time);
+		return serviceResponse.map(response -> ResponseEntity.ok(response))
+				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Price()));
 	}
 }

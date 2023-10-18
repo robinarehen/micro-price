@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "f401be55-5570-4144-92a0-0bb1494dd90f",
+		"name": "Test-Java-2020",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getPrice-test-1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostport}}/price/{{date}}/{{productId}}/{{brandId}}?time=10:00",
+					"host": [
+						"{{hostport}}"
+					],
+					"path": [
+						"price",
+						"{{date}}",
+						"{{productId}}",
+						"{{brandId}}"
+					],
+					"query": [
+						{
+							"key": "time",
+							"value": "10:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPrice-test-2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostport}}/price/{{date}}/{{productId}}/{{brandId}}?time=16:00",
+					"host": [
+						"{{hostport}}"
+					],
+					"path": [
+						"price",
+						"{{date}}",
+						"{{productId}}",
+						"{{brandId}}"
+					],
+					"query": [
+						{
+							"key": "time",
+							"value": "16:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPrice-test-3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostport}}/price/{{date}}/{{productId}}/{{brandId}}?time=21:00",
+					"host": [
+						"{{hostport}}"
+					],
+					"path": [
+						"price",
+						"{{date}}",
+						"{{productId}}",
+						"{{brandId}}"
+					],
+					"query": [
+						{
+							"key": "time",
+							"value": "21:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPrice-test-4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostport}}/price/{{date-2}}/{{productId}}/{{brandId}}?time=10:00",
+					"host": [
+						"{{hostport}}"
+					],
+					"path": [
+						"price",
+						"{{date-2}}",
+						"{{productId}}",
+						"{{brandId}}"
+					],
+					"query": [
+						{
+							"key": "time",
+							"value": "10:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPrice-test-5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostport}}/price/{{date-3}}/{{productId}}/{{brandId}}?time=21:00",
+					"host": [
+						"{{hostport}}"
+					],
+					"path": [
+						"price",
+						"{{date-3}}",
+						"{{productId}}",
+						"{{brandId}}"
+					],
+					"query": [
+						{
+							"key": "time",
+							"value": "21:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPrice-test-6",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostport}}/price/2021-06-14/{{productId}}/{{brandId}}?time=10:00",
+					"host": [
+						"{{hostport}}"
+					],
+					"path": [
+						"price",
+						"2021-06-14",
+						"{{productId}}",
+						"{{brandId}}"
+					],
+					"query": [
+						{
+							"key": "time",
+							"value": "10:00"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "hostport",
+			"value": "http://localhost:8080/api",
+			"type": "default"
+		},
+		{
+			"key": "date",
+			"value": "2020-06-14",
+			"type": "default"
+		},
+		{
+			"key": "brandId",
+			"value": "1",
+			"type": "default"
+		},
+		{
+			"key": "productId",
+			"value": "35455",
+			"type": "default"
+		},
+		{
+			"key": "date-2",
+			"value": "2020-06-15",
+			"type": "default"
+		},
+		{
+			"key": "date-3",
+			"value": "2020-06-16",
+			"type": "default"
+		}
+	]
+}
