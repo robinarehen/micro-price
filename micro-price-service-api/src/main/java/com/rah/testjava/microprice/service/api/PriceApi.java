@@ -66,7 +66,7 @@ public interface PriceApi {
         @Parameter(name = "date", description = "", required = true) @PathVariable("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date,
         @Parameter(name = "productId", description = "", required = true) @PathVariable("productId") Integer productId,
         @Parameter(name = "brandId", description = "", required = true) @PathVariable("brandId") Integer brandId,
-        @Pattern(regexp = "([01]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]") @Parameter(name = "time", description = "") @Valid @RequestParam(value = "time", required = false) String time
+        @Pattern(regexp = "([01]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?") @Parameter(name = "time", description = "") @Valid @RequestParam(value = "time", required = false) String time
     );
 
 }
