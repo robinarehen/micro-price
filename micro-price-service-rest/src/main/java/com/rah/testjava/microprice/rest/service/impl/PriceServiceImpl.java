@@ -44,7 +44,7 @@ public class PriceServiceImpl implements PriceService {
 
 		LocalDateTime dateTime = LocalDateTime.parse(dateTimeStr);
 
-		List<PriceEntity> priceEntities = this.priceRepository.findByProductAndBrandAndDateTimeBetween(dateTime);
+		List<PriceEntity> priceEntities = this.priceRepository.findByProductAndBrandAndDateTimeBetween(productId, brandId, dateTime);
 
 		List<Price> prices = priceEntities.stream().sorted(Comparator.comparing(PriceEntity::getPriority).reversed())
 				.map(price -> this.mapper.mapperObject(price, Price.class)).collect(Collectors.toList());

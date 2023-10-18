@@ -15,7 +15,7 @@ import lombok.Data;
 @Table(name = "prices")
 @Data
 @NamedQuery(name = "PriceEntity.findByProductAndBrandAndDateTimeBetween", 
-	query = "select p from PriceEntity p where ?1 between p.startDate and p.endDate")
+query = "select p from PriceEntity p where p.productId = ?1 and p.brandId = ?2 and ?3 between p.startDate and p.endDate")
 public class PriceEntity {
 
 	@Id

@@ -1,7 +1,5 @@
 package com.rah.testjava.microprice.rest;
 
-import java.time.LocalDateTime;
-
 import org.junit.jupiter.api.Test;
 
 //import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,9 +12,6 @@ public class PriceApplicationTest {
 
 	@Test
 	public void contextLoads() {
-		LocalDateTime dateTime = LocalDateTime.now();
-
-		System.out.println(dateTime);
 	}
 
 }

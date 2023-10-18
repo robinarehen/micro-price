@@ -9,5 +9,6 @@ import com.rah.testjava.microprice.rest.entity.PriceEntity;
 
 public interface PriceRepository extends JpaRepository<PriceEntity, Integer> {
 
-	List<PriceEntity> findByProductAndBrandAndDateTimeBetween(LocalDateTime dateTime);
+	List<PriceEntity> findByProductAndBrandAndDateTimeBetween(Integer ProductId, Integer BrandId,
+			LocalDateTime dateTime);
 }
