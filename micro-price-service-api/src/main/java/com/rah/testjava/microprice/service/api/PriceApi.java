@@ -8,6 +8,8 @@ package com.rah.testjava.microprice.service.api;
 import java.time.LocalDate;
 
 import javax.annotation.Generated;
+import javax.validation.Valid;
+import javax.validation.constraints.Pattern;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +17,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rah.testjava.microprice.service.model.Price;
 
@@ -25,7 +28,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-10-16T18:02:52.640047+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-10-17T13:43:37.603931600+02:00[Europe/Paris]")
 @Validated
 @Tag(name = "price", description = "Everything about your Price")
 public interface PriceApi {
@@ -37,6 +40,7 @@ public interface PriceApi {
      * @param date  (required)
      * @param productId  (required)
      * @param brandId  (required)
+     * @param time  (optional)
      * @return successful operation (status code 200)
      *         or Invalid ID supplied (status code 400)
      *         or Price not found (status code 404)
@@ -61,7 +65,8 @@ public interface PriceApi {
     ResponseEntity<Price> getPrice(
         @Parameter(name = "date", description = "", required = true) @PathVariable("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date,
         @Parameter(name = "productId", description = "", required = true) @PathVariable("productId") Integer productId,
-        @Parameter(name = "brandId", description = "", required = true) @PathVariable("brandId") Integer brandId
+        @Parameter(name = "brandId", description = "", required = true) @PathVariable("brandId") Integer brandId,
+        @Pattern(regexp = "([01]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]") @Parameter(name = "time", description = "") @Valid @RequestParam(value = "time", required = false) String time
     );
 
 }

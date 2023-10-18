@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.rah.testjava</groupId>
 		<artifactId>micro-price</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
+
 	<artifactId>micro-price-service-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<description>Demo project for Spring Boot</description>
+
 	<properties>
 		<java.version>11</java.version>
 		<basePackage>com.rah.testjava.microprice.service</basePackage>
 	</properties>
-	<!--<build>
+
+	<!-- <build>
 		<plugins>
 			<plugin>
 				<groupId>org.openapitools</groupId>
@@ -29,7 +30,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<inputSpec>${project.basedir}/src/main/resources/swagger/swagger-v2.yaml</inputSpec>
+							<inputSpec>${project.basedir}/src/main/resources/swagger/openapi-v3.yaml</inputSpec>
 							<output>${project.build.sourceDirectory}</output>
 							<generatorName>spring</generatorName>
 							<library>spring-boot</library>
@@ -52,5 +53,6 @@
 				</executions>
 			</plugin>
 		</plugins>
-	</build>-->
+	</build> -->
+
 </project>

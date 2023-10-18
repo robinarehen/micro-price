@@ -17,7 +17,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  */
 @com.fasterxml.jackson.annotation.JsonInclude(com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL)
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-10-16T18:02:52.640047+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-10-17T13:43:37.603931600+02:00[Europe/Paris]")
 public class Price {
 
   @JsonProperty("brandId")

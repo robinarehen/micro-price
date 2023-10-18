@@ -13,15 +13,14 @@ import com.rah.testjava.microprice.service.model.Price;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/api/price")
+@RequestMapping("/api")
 @AllArgsConstructor
 public class PriceController implements PriceApi {
 
 	private PriceService priceService;
 
 	@Override
-	public ResponseEntity<Price> getPrice(LocalDate date, Integer productId, Integer brandId) {
-		// TODO Auto-generated method stub
-		return null;
+	public ResponseEntity<Price> getPrice(LocalDate date, Integer productId, Integer brandId, String time) {
+		return ResponseEntity.ok(this.priceService.getPrice(date, productId, brandId, time));
 	}
 }

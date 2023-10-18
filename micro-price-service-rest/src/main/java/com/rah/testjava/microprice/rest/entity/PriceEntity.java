@@ -6,15 +6,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 @Entity
 @Table(name = "prices")
-@Setter
-@Getter
+@Data
+@NamedQuery(name = "PriceEntity.findByProductAndBrandAndDateTimeBetween", 
+	query = "select p from PriceEntity p where ?1 between p.startDate and p.endDate")
 public class PriceEntity {
 
 	@Id
