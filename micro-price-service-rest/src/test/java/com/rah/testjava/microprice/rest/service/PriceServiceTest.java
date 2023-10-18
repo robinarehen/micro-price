@@ -44,11 +44,15 @@ public class PriceServiceTest {
 
 	private String loadJson(String fileName) {
 		try {
+
 			BufferedReader reader = new BufferedReader(
 					new FileReader(String.format("src/test/resources/%s", fileName)));
+
 			String json = reader.lines().map(value -> new StringBuilder().append(value.trim()))
 					.collect(Collectors.joining());
+
 			reader.close();
+
 			return json;
 		} catch (Exception e) {
 			return null;
@@ -68,7 +72,7 @@ public class PriceServiceTest {
 		Integer productId = 35455;
 		Integer brandId = 1;
 		String time = "10:00:00";
-		String fileName = "test-1.json";
+		String fileName = "response-1.json";
 
 		this.loadMock(fileName);
 
@@ -87,8 +91,7 @@ public class PriceServiceTest {
 		Integer productId = 35455;
 		Integer brandId = 1;
 		String time = "16:00:00";
-
-		String fileName = "test-2.json";
+		String fileName = "response-2.json";
 
 		this.loadMock(fileName);
 
@@ -99,4 +102,62 @@ public class PriceServiceTest {
 		Integer expected = 2;
 		assertEquals(expected, price.getPriceList());
 	}
+
+	@Test
+	public void getPriceTest3() {
+
+		LocalDate date = LocalDate.parse("2020-06-14");
+		Integer productId = 35455;
+		Integer brandId = 1;
+		String time = "21:00:00";
+		String fileName = "response-1.json";
+
+		this.loadMock(fileName);
+
+		Optional<Price> response = this.priceService.getPrice(date, productId, brandId, time);
+
+		assertTrue(response.isPresent());
+		Price price = response.get();
+		Integer expected = 1;
+		assertEquals(expected, price.getPriceList());
+	}
+
+	@Test
+	public void getPriceTest4() {
+
+		LocalDate date = LocalDate.parse("2020-06-15");
+		Integer productId = 35455;
+		Integer brandId = 1;
+		String time = "10:00:00";
+		String fileName = "response-4.json";
+
+		this.loadMock(fileName);
+
+		Optional<Price> response = this.priceService.getPrice(date, productId, brandId, time);
+
+		assertTrue(response.isPresent());
+		Price price = response.get();
+		Integer expected = 3;
+		assertEquals(expected, price.getPriceList());
+	}
+
+	@Test
+	public void getPriceTest5() {
+
+		LocalDate date = LocalDate.parse("2020-06-16");
+		Integer productId = 35455;
+		Integer brandId = 1;
+		String time = "21:00:00";
+		String fileName = "response-5.json";
+
+		this.loadMock(fileName);
+
+		Optional<Price> response = this.priceService.getPrice(date, productId, brandId, time);
+
+		assertTrue(response.isPresent());
+		Price price = response.get();
+		Integer expected = 4;
+		assertEquals(expected, price.getPriceList());
+	}
+
 }
