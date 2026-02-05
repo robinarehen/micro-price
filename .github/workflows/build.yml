@@ -38,7 +38,7 @@ jobs:
           -Dsonar.projectKey=robinarehen_micro-price \
           -Dsonar.organization=robinarehen \
           -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.login=${SONAR_TOKEN}
+          -Dsonar.token=${SONAR_TOKEN}
 
       - name: Publish test results
         if: always()
